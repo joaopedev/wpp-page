@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes} from "react-router-dom";
 import Home from "../pages/home";
+import VideoPage from "../pages/videoPage"
 
 
 const AppRoutes: React.FC = () => {
@@ -8,6 +9,7 @@ const AppRoutes: React.FC = () => {
     <BrowserRouter>
         <Routes>
             <Route path="/" element={<Home/>} />
+            <Route path="/contatos" element={<VideoPage/>} />
         </Routes>
     </BrowserRouter>
   );
