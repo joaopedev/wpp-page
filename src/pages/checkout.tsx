@@ -15,12 +15,20 @@ import CompraSegura from "../images/image_compra_garantida.png";
 import CompraSegura2 from "../images/image_compra_garantida_2.png";
 import Garantia from "../images/garantia.png";
 import FooterImage from "../images/footer_image.png";
+import Comentarios from "../images/comentarios.png";
 
 const getCurrentYear = () => {
     return new Date().getFullYear();
   };
 
 export const CheckOut: React.FC = () => {
+
+    const handleClick = () => {
+
+        window.open('https://app.monetizze.com.br/checkout/KGX357636', '_blank')
+
+    };
+
     return (
         <Box>
             <Box bg="Yellow" h="60px" w="100%" p={4} color="white">
@@ -77,7 +85,7 @@ export const CheckOut: React.FC = () => {
                     <Image src={ValorDesc} alt='desconto' />
                 </VStack>
                 <VStack spacing={4} align={'center'} mt={4}>
-                <Button w="20%" colorScheme="green">
+                <Button w="20%" colorScheme="green" onClick={handleClick}>
                     <Text color='white' fontSize='20' as='b'>
                         QUERO ESPIONAR TUDO
                     </Text>
@@ -86,8 +94,11 @@ export const CheckOut: React.FC = () => {
                 <VStack spacing={1}>
                         <Image src={CompraSegura} alt='compra segura' />
                 </VStack>
+                <VStack spacing={1} mt={4}>
+                    <Image src={Comentarios} alt='comentarios' width={'60%'}/>
+                </VStack>
                 <VStack>
-                    <Text color='green' fontSize='20' as='b' justifyContent="center">
+                    <Text color='green' fontSize='20' as='b' justifyContent="center" mt={3}>
                         ÚLTIMAS 7 LICENÇAS COM DESCONTO
                     </Text> 
                 </VStack>
@@ -100,7 +111,7 @@ export const CheckOut: React.FC = () => {
                     <Image src={ValorDesc} alt='desconto' />
                 </VStack>
                 <VStack spacing={4} align={'center'} mt={4}>
-                <Button w="20%" colorScheme="green">
+                <Button w="20%" colorScheme="green" onClick={handleClick}>
                     <Text color='white' fontSize='20' as='b'>
                         QUERO ESPIONAR TUDO
                     </Text>
@@ -138,7 +149,7 @@ export const CheckOut: React.FC = () => {
                     <Image src={ValorDesc} alt='desconto' />
                 </VStack>
                 <VStack spacing={4} align={'center'}>
-                <Button w="20%" colorScheme="green">
+                <Button w="20%" colorScheme="green" onClick={handleClick}>
                     <Text color='white' fontSize='20' as='b'>
                         QUERO ESPIONAR TUDO
                     </Text>
@@ -177,7 +188,7 @@ export const CheckOut: React.FC = () => {
                     <Image src={ValorDesc} alt='desconto' />
                 </VStack>
                 <VStack spacing={4} align={'center'}>
-                <Button w="20%" colorScheme="green" mt={4}>
+                <Button w="20%" colorScheme="green" mt={4} onClick={handleClick}>
                     <Text color='white' fontSize='20' as='b'>
                         QUERO ESPIONAR TUDO
                     </Text>
@@ -209,7 +220,7 @@ export const CheckOut: React.FC = () => {
                     <Image src={ValorDesc} alt='desconto' />
                 </VStack>
                 <VStack spacing={4} align={'center'}>
-                <Button w="20%" colorScheme="green" mt={4}>
+                <Button w="20%" colorScheme="green" mt={4} onClick={handleClick}>
                     <Text color='white' fontSize='20' as='b'>
                         QUERO ESPIONAR TUDO
                     </Text>
