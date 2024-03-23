@@ -9,8 +9,14 @@ import {
   SimpleGrid,
 } from "@chakra-ui/react";
 import * as React from "react";
+import { Link } from 'react-router-dom';
 
 export const VideoPage: React.FC = () => {
+
+  const handleClick = () => {
+      window.location.href = '/checkout';
+  }
+
   return (
     <Box>
       <Box bg="Yellow" h="60px" w="100%" p={4} color="white">
@@ -39,9 +45,11 @@ export const VideoPage: React.FC = () => {
 
         <Stack mt={7} ml="35%">
           <Progress maxW="50%" value={80} />
-          <Button w="50%" colorScheme="green">
+          <Link to="/checkout">
+          <Button w="50%" colorScheme="green" onClick={handleClick}>
             Quero ver o Resultado!
           </Button>
+          </Link>
         </Stack>
         <SimpleGrid columns={[1, 2]} spacing={4}>
           <AspectRatio ml="16%" maxW="70%" ratio={1}>
