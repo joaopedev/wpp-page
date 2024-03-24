@@ -1,5 +1,13 @@
-import { Box, Image, VStack, Input, Button, Text, Spinner } from "@chakra-ui/react";
-import React, { useState } from 'react';
+import {
+  Box,
+  Image,
+  VStack,
+  Input,
+  Button,
+  Text,
+  Spinner,
+} from "@chakra-ui/react";
+import React, { useState } from "react";
 import TesteImage from "../images/teste_agora_mesmo.png";
 import FooterImage from "../images/footer_image.png";
 
@@ -8,31 +16,44 @@ const getCurrentYear = () => {
 };
 
 export const Home: React.FC = () => {
-
   const [isLoading, setIsLoading] = useState(false);
+  const [phoneNumber, setPhoneNumber] = useState("");
 
   const handleClick = () => {
-
     setIsLoading(true);
-
     setTimeout(() => {
-      window.location.href = '/contatos';
+      window.location.href = "/contatos";
     }, 5000);
   };
 
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = event.target;
+    if (/^\+?[0-9\s()-]*$/.test(value) || value === "") {
+      setPhoneNumber(value);
+    }
+  };
   return (
     <Box>
-      <Box bg="#00a86b" h="90px" w="100%" p={4} color="white">
-      </Box>
+      <Box bg="#00a86b" h="90px" w="100%" p={4} color="white"></Box>
       <VStack>
         <Image src={TesteImage} alt="Dan Abramov" />
       </VStack>
       <VStack>
-        <Input placeholder="Cod País + Whatsapp" maxW="80%" />
+        <Input
+          placeholder="Cod País + Whatsapp"
+          maxW="80%"
+          value={phoneNumber}
+          onChange={handleInputChange}
+        />
         {isLoading ? (
           <Spinner />
-          ) : (
-          <Button w="80%" colorScheme="green" onClick={handleClick}>
+        ) : (
+          <Button
+            w="80%"
+            colorScheme="green"
+            onClick={handleClick}
+            disabled={!phoneNumber}
+          >
             Rastrear agora
           </Button>
         )}
