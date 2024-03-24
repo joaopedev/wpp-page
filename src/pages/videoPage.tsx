@@ -9,13 +9,24 @@ import {
   SimpleGrid,
 } from "@chakra-ui/react";
 import * as React from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export const VideoPage: React.FC = () => {
-
+  const [progress, setProgress] = React.useState(0);
   const handleClick = () => {
-      window.location.href = '/checkout';
-  }
+    window.location.href = "/checkout";
+  };
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setProgress((prevProgress) => {
+        const newProgress = prevProgress + 1;
+        return newProgress <= 100 ? newProgress : prevProgress;
+      });
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <Box>
@@ -30,11 +41,11 @@ export const VideoPage: React.FC = () => {
       <VStack>
         <Text as="b" mt={8}>
           Acesse o Whatsapp, Instagram, Facebook, Ligações, Áudios, Fotos,
-          Vídeos e Localização de qualquer Celular usando este APlicativo apenas
+          Vídeos e Localização de qualquer Celular usando este Aplicativo apenas
           com o numero
         </Text>
       </VStack>
-      <Box>
+      <Box mt={3}>
         <AspectRatio ml="16%" maxW="70%" ratio={1}>
           <iframe
             title="naruto"
@@ -42,16 +53,18 @@ export const VideoPage: React.FC = () => {
             allowFullScreen
           />
         </AspectRatio>
-
+        <Stack mt={4} ml={"30%"}>
+        <Progress colorScheme='green' height="32px" maxW="60%" value={progress} />
+        </Stack>
         <Stack mt={7} ml="35%">
-          <Progress maxW="50%" value={80} />
+          
           <Link to="/checkout">
-          <Button w="50%" colorScheme="green" onClick={handleClick}>
-            Quero ver o Resultado!
-          </Button>
+            <Button w="50%" colorScheme="green" onClick={handleClick}>
+              Quero ver o Resultado!
+            </Button>
           </Link>
         </Stack>
-        <SimpleGrid columns={[1, 2]} spacing={4}>
+        <SimpleGrid mt={5} columns={[1, 2]} spacing={2}>
           <AspectRatio ml="16%" maxW="70%" ratio={1}>
             <iframe
               title="naruto"
