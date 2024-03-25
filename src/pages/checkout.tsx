@@ -4,7 +4,6 @@ import {
   Text,
   Image,
   Flex,
-  AspectRatio,
   Button,
   Stack,
 } from "@chakra-ui/react";
@@ -17,6 +16,8 @@ import Garantia from "../images/garantia.png";
 import FooterImage from "../images/footer_image.png";
 import Comentarios from "../images/comentarios.png";
 import BreathableButton from "../components/breathableButton";
+import PrimeiroVideoPaginaTres from "../videos/primeirovideopaginatres.mp4"
+import SegundoVideoPaginaTres from "../videos/segundovideopaginatres.mp4"
 
 const getCurrentYear = () => {
   return new Date().getFullYear();
@@ -184,13 +185,12 @@ export const CheckOut: React.FC = () => {
           </Text>
         </VStack>
         <Stack mt={3}>
-          <AspectRatio ml="16%" maxW="70%" ratio={1}>
-            <iframe
-              title="naruto"
-              src="https://www.youtube.com/embed/QhBnZ6NPOY0"
-              allowFullScreen
-            />
-          </AspectRatio>
+        <Box ml="16%">
+            <video controls width="80%">
+              <source src={PrimeiroVideoPaginaTres} type="video/mp4" />
+              Seu navegador não suporta o elemento de vídeo.
+            </video>
+          </Box>
         </Stack>
         <VStack mt={4}>
           <Text color="green" fontSize="20" as="b" justifyContent="center">
@@ -216,13 +216,12 @@ export const CheckOut: React.FC = () => {
           <Image src={CompraSegura} alt="compra segura" />
         </VStack>
         <Stack mt={4}>
-          <AspectRatio ml="16%" maxW="70%" ratio={1}>
-            <iframe
-              title="naruto"
-              src="https://www.youtube.com/embed/QhBnZ6NPOY0"
-              allowFullScreen
-            />
-          </AspectRatio>
+        <Box ml="16%">
+            <video controls width="80%">
+              <source src={SegundoVideoPaginaTres} type="video/mp4" />
+              Seu navegador não suporta o elemento de vídeo.
+            </video>
+          </Box>
         </Stack>
         <VStack mt={4}>
           <Text color="green" fontSize="20" as="b" justifyContent="center">
