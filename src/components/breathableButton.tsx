@@ -14,21 +14,27 @@ const BreathableButton = styled(Button)`
 `;
 
 const ButtonText = styled(Text)`
-  font-size: 80%;
+  font-size: 16px; /* Tamanho padrão do texto */
+
+  /* Media query para dispositivos de tela menores */
+  @media screen and (max-width: 768px) {
+    font-size: 14px; /* Tamanho do texto para telas menores */
+  }
+
+  /* Media query para dispositivos de tela ainda menores */
+  @media screen and (max-width: 480px) {
+    font-size: 12px; /* Tamanho do texto para telas ainda menores */
+  }
 `;
 
-const BreathableButtonComponent: React.FC<{ onClick: () => void }> = ({ onClick }) => {
+const ResulthableButton: React.FC<{ onClick: () => void }> = ({ onClick }) => {
   return (
-    <BreathableButton
-      w="25%"
-      colorScheme="green"
-      onClick={onClick}
-    >
-      <ButtonText color="white" fontWeight="bold">
+    <BreathableButton colorScheme="green" onClick={onClick} p={3}>
+      <ButtonText color="white" p={3} fontWeight="bold">
         QUERO ESPIONAR TUDO
       </ButtonText>
     </BreathableButton>
   );
 };
 
-export default BreathableButtonComponent;
+export default ResulthableButton;

@@ -7,7 +7,7 @@ import {
   Text,
   Spinner,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TesteImage from "../images/teste_agora_mesmo.png";
 import FooterImage from "../images/footer_image.png";
 import { useNavigate } from "react-router-dom";
@@ -21,6 +21,13 @@ export const Home: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState("");
 
+  useEffect(() => {
+    const storedPhoneNumber = localStorage.getItem("phoneNumber");
+    if (storedPhoneNumber) {
+      setPhoneNumber(storedPhoneNumber);
+    }
+  }, []);
+
   const handleClick = () => {
     setLoading(true);
     setTimeout(() => {
@@ -32,6 +39,7 @@ export const Home: React.FC = () => {
     const { value } = event.target;
     if (/^\+?[0-9\s()-]*$/.test(value) || value === "") {
       setPhoneNumber(value);
+      localStorage.setItem("phoneNumber", value);
     }
   };
   return (

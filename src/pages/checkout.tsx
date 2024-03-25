@@ -1,11 +1,4 @@
-import {
-  Box,
-  VStack,
-  Text,
-  Image,
-  Flex,
-  Stack,
-} from "@chakra-ui/react";
+import { Box, VStack, Text, Image, Flex, Stack } from "@chakra-ui/react";
 import * as React from "react";
 import PrintImage from "../images/print_wpp.png";
 import ValorDesc from "../images/valor_desc.png";
@@ -15,8 +8,12 @@ import Garantia from "../images/garantia.png";
 import FooterImage from "../images/footer_image.png";
 import Comentarios from "../images/comentarios.png";
 import BreathableButton from "../components/breathableButton";
-import PrimeiroVideoPaginaTres from "../videos/primeirovideopaginatres.mp4"
-import SegundoVideoPaginaTres from "../videos/segundovideopaginatres.mp4"
+import PrimeiroVideoPaginaTres from "../videos/primeirovideopaginatres.mp4";
+import SegundoVideoPaginaTres from "../videos/segundovideopaginatres.mp4";
+
+const getRandomNumber = () => {
+  return Math.floor(Math.random() * (180 - 80 + 1)) + 80;
+};
 
 const getCurrentYear = () => {
   return new Date().getFullYear();
@@ -27,13 +24,14 @@ export const CheckOut: React.FC = () => {
     window.open("https://app.monetizze.com.br/checkout/KGX357636", "_blank");
   };
 
+  const licenseCount = getRandomNumber();
+
   return (
     <Box>
-      <Box bg="Yellow" h="60px" w="100%" p={4} color="white">
+      <Box bg="Yellow" h="30%" w="100%" p={4} color="white">
         <VStack>
           <Text color="black" fontSize="2xl" as="b">
-            {" "}
-            RESTAM: N LICENÇAS DISPONÍVEIS
+            RESTAM: {licenseCount} LICENÇAS DISPONÍVEIS
           </Text>
         </VStack>
       </Box>
@@ -60,24 +58,15 @@ export const CheckOut: React.FC = () => {
             SIMBÓLICA PARA MANTER NOSSO SITE NO AR E SEU APP ESPIÃO FUNCIONANDO
           </Text>
           <Text
+            mt={4}
             color="black"
             fontSize="16"
             as="b"
             textDecoration={"underline"}
             justifyContent="center"
           >
-            VOCÊ VAI PRECISAR APENAS DO NÚMERO PARA MONITORAR
-          </Text>
-        </VStack>
-        <VStack>
-          <Text
-            color="black"
-            fontSize="16"
-            as="b"
-            textDecoration={"underline"}
-            justifyContent="center"
-          >
-            NÃO PRECISA TER ACESSO AO CELULAR PARA MONITORAR
+            VOCÊ VAI PRECISAR APENAS DO NÚMERO PARA MONITORAR <br></br> NÃO
+            PRECISA TER ACESSO AO CELULAR PARA MONITORAR
           </Text>
         </VStack>
         <VStack spacing={1} mt={4}>
@@ -132,8 +121,8 @@ export const CheckOut: React.FC = () => {
         </VStack>
       </Box>
       <Box bg={"gray"}>
-        <VStack spacing={4} align={"center"}>
-          <Text color={"white"} fontSize={45} justifyContent={"center"}>
+        <VStack>
+          <Text fontSize="4xl" as="b" color={"white"}>
             GARANTIA BLINDADA
           </Text>
         </VStack>
@@ -170,17 +159,12 @@ export const CheckOut: React.FC = () => {
       </Box>
       <Box bg={"white"}>
         <VStack spacing={4} align={"center"} mt={4}>
-          <Text
-            color={"black"}
-            fontSize={30}
-            as={"b"}
-            justifyContent={"center"}
-          >
+          <Text color={"black"} fontSize="2xl" as={"b"}>
             PESSOAS QUE USAM APP ESPIÃO
           </Text>
         </VStack>
         <Stack mt={3}>
-        <Box ml="16%">
+          <Box ml="16%">
             <video controls width="80%">
               <source src={PrimeiroVideoPaginaTres} type="video/mp4" />
               Seu navegador não suporta o elemento de vídeo.
@@ -207,7 +191,7 @@ export const CheckOut: React.FC = () => {
           <Image src={CompraSegura} alt="compra segura" />
         </VStack>
         <Stack mt={4}>
-        <Box ml="16%">
+          <Box ml="16%">
             <video controls width="80%">
               <source src={SegundoVideoPaginaTres} type="video/mp4" />
               Seu navegador não suporta o elemento de vídeo.
