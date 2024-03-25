@@ -8,6 +8,7 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import * as React from "react";
+import { Link } from 'react-router-dom'
 import PrintImage from "../images/print_wpp.png";
 import ValorDesc from "../images/valor_desc.png";
 import CompraSegura from "../images/image_compra_garantida.png";
@@ -162,12 +163,8 @@ export const CheckOut: React.FC = () => {
         <VStack spacing={1}>
           <Image src={ValorDesc} alt="desconto" />
         </VStack>
-        <VStack spacing={4} align={"center"}>
-          <Button w="20%" colorScheme="green" onClick={handleClick}>
-            <Text color="white" fontSize="20" as="b">
-              QUERO ESPIONAR TUDO
-            </Text>
-          </Button>
+        <VStack spacing={4} align={"center"} mt={4}>
+          <BreathableButton onClick={handleClick} />
         </VStack>
         <VStack spacing={1}>
           <Image src={CompraSegura2} alt="compra segura" />
@@ -205,12 +202,8 @@ export const CheckOut: React.FC = () => {
         <VStack spacing={1}>
           <Image src={ValorDesc} alt="desconto" />
         </VStack>
-        <VStack spacing={4} align={"center"}>
-          <Button w="20%" colorScheme="green" mt={4} onClick={handleClick}>
-            <Text color="white" fontSize="20" as="b">
-              QUERO ESPIONAR TUDO
-            </Text>
-          </Button>
+        <VStack spacing={4} align={"center"} mt={4}>
+          <BreathableButton onClick={handleClick} />
         </VStack>
         <VStack spacing={1}>
           <Image src={CompraSegura} alt="compra segura" />
@@ -236,12 +229,8 @@ export const CheckOut: React.FC = () => {
         <VStack spacing={1}>
           <Image src={ValorDesc} alt="desconto" />
         </VStack>
-        <VStack spacing={4} align={"center"}>
-          <Button w="20%" colorScheme="green" mt={4} onClick={handleClick}>
-            <Text color="white" fontSize="20" as="b">
-              QUERO ESPIONAR TUDO
-            </Text>
-          </Button>
+        <VStack spacing={4} align={"center"} mt={4}>
+          <BreathableButton onClick={handleClick} />
         </VStack>
         <VStack spacing={1}>
           <Image src={CompraSegura} alt="compra segura" />

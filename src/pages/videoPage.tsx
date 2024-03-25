@@ -8,7 +8,7 @@ import {
   Image,
 } from "@chakra-ui/react";
 import * as React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import VideoAPP from "../videos/appespiao.mp4";
 import FooterImage from "../images/footer_image.png";
 import ResulthableButton from "../components/resulthableButton";
@@ -20,10 +20,11 @@ import QuintoVideoEspiao from "../videos/quintovideoespiao.mp4";
 import SextoVideoEspiao from "../videos/sextovideoespiao.mp4";
 
 export const VideoPage: React.FC = () => {
+  const navigate = useNavigate();
   const [progress, setProgress] = React.useState(0);
   const handleClick = () => {
-    window.location.href = "/checkout";
-  };
+    navigate('/checkout')
+  }
 
   React.useEffect(() => {
     const interval = setInterval(() => {
@@ -71,9 +72,7 @@ export const VideoPage: React.FC = () => {
         </Stack>
         {progress === 100 && (
           <Stack mt={7} ml="45%">
-            <Link to="/checkout">
               <ResulthableButton onClick={handleClick} />
-            </Link>
           </Stack>
         )}
         <SimpleGrid mt={5} columns={[1, 2]} spacing={2}>

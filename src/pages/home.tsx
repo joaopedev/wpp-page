@@ -10,19 +10,21 @@ import {
 import React, { useState } from "react";
 import TesteImage from "../images/teste_agora_mesmo.png";
 import FooterImage from "../images/footer_image.png";
+import { useNavigate } from "react-router-dom";
 
 const getCurrentYear = () => {
   return new Date().getFullYear();
 };
 
 export const Home: React.FC = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState("");
 
   const handleClick = () => {
-    setIsLoading(true);
+    setLoading(true);
     setTimeout(() => {
-      window.location.href = "/contatos";
+      navigate("/contatos");
     }, 5000);
   };
 
@@ -45,18 +47,9 @@ export const Home: React.FC = () => {
           value={phoneNumber}
           onChange={handleInputChange}
         />
-        {isLoading ? (
-          <Spinner />
-        ) : (
-          <Button
-            w="80%"
-            colorScheme="green"
-            onClick={handleClick}
-            disabled={!phoneNumber}
-          >
-            Rastrear agora
-          </Button>
-        )}
+        <Button w="80%" colorScheme="green" onClick={handleClick}>
+          {loading ? <Spinner /> : "Rastrear agora"}
+        </Button>
         <Text mt={8}>*Esta Ferramenta é 100% anônima.</Text>
         <Text>Funciona em todos os sistemas operacionais.</Text>
       </VStack>
