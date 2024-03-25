@@ -4,11 +4,9 @@ import {
   Text,
   Image,
   Flex,
-  Button,
   Stack,
 } from "@chakra-ui/react";
 import * as React from "react";
-import { Link } from 'react-router-dom'
 import PrintImage from "../images/print_wpp.png";
 import ValorDesc from "../images/valor_desc.png";
 import CompraSegura from "../images/image_compra_garantida.png";

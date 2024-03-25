@@ -1,7 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { Button, Text } from "@chakra-ui/react";
 import React from "react";
-import { Link } from "react-router-dom"
 
 const breatheAnimation = keyframes`
   0% { transform: scale(1); }
