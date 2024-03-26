@@ -49,7 +49,6 @@ export const VideoPage: React.FC = () => {
       <Box bg="Yellow" h="30%" w="100%" p={4} color="white">
         <VStack>
           <Text color="black" fontSize="2xl" as="b">
-          
             APLICATIVO FUNCIONA EM TODOS OS PAÍSES DO MUNDO
           </Text>
         </VStack>
@@ -61,13 +60,13 @@ export const VideoPage: React.FC = () => {
           com o numero
         </Text>
       </VStack>
-      <Box mt={3}>
-        <Box ml="15%">
+      <Box  mt={3}>
+        <VStack>
           <video controls autoPlay width="80%">
             <source src={VideoAPP} type="video/mp4" />
             Seu navegador não suporta o elemento de vídeo.
           </video>
-        </Box>
+        </VStack>
         <Stack mt={4} ml={"27%"}>
           <Progress
             colorScheme="green"
@@ -77,6 +76,13 @@ export const VideoPage: React.FC = () => {
           />
           <Text ml={"29%"}>{progress >= 2 ? `${progress}%` : "2%"}</Text>
         </Stack>
+        {progress < 100 ? (
+          <VStack m={2}>
+            <Text>
+              Aguarde! Estamos levantando as informações sobre o contato.
+            </Text>
+          </VStack>
+        ) : null}
 
         {progress === 100 && (
           <VStack mt={7}>
@@ -92,15 +98,15 @@ export const VideoPage: React.FC = () => {
             mt={5}
           >
             <VStack>
-              <Text  as="b" mt={6} fontSize="sm" color="green.500">
+              <Text as="b" mt={6} fontSize="sm" color="green.500">
                 {phoneNumber}
               </Text>
               <Avatar size="2xl" mt={2} src="https://bit.ly/broken-link" />
             </VStack>
             <VStack>
-            <Text mt={2} fontSize="sm" color="gray.500">
-              Analisando...
-            </Text>
+              <Text mt={2} fontSize="sm" color="gray.500">
+                Analisando...
+              </Text>
             </VStack>
             <Progress
               mt={2}
@@ -112,6 +118,11 @@ export const VideoPage: React.FC = () => {
             />
           </Stack>
         ) : null}
+        {progress === 100 && (
+          <VStack mt={3}>
+          <Text p={5} as="b">Veja os comentários dos nossos clientes! </Text>
+          </VStack>
+        )}
         {progress === 100 && (
           <SimpleGrid mt={5} columns={[1, 2]} spacing={2}>
             <Box ml="16%">
