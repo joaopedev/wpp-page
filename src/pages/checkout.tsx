@@ -91,8 +91,8 @@ export const CheckOut: React.FC = () => {
         <VStack spacing={1}>
           <Image src={CompraSegura} alt="compra segura" />
         </VStack>
-        <VStack spacing={1} mt={4}>
-          <Image src={Comentarios} alt="comentarios" width={"60%"} />
+        <VStack m={-2} spacing={1} mt={4}>
+          <Image src={Comentarios} alt="comentarios"/>
         </VStack>
         <VStack>
           <Text
@@ -120,7 +120,7 @@ export const CheckOut: React.FC = () => {
           <Image src={CompraSegura} alt="compra segura" />
         </VStack>
       </Box>
-      <Box bg={"gray"}>
+      <Box  bg={"gray"}>
         <VStack>
           <Text fontSize="4xl" as="b" color={"white"}>
             GARANTIA BLINDADA
