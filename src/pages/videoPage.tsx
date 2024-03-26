@@ -62,7 +62,7 @@ export const VideoPage: React.FC = () => {
       </VStack>
       <Box  mt={3}>
         <VStack>
-          <video controls autoPlay width="80%">
+           <video autoPlay disableRemotePlayback controls={false} width="80%">
             <source src={VideoAPP} type="video/mp4" />
             Seu navegador não suporta o elemento de vídeo.
           </video>
