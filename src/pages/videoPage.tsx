@@ -110,9 +110,9 @@ export const VideoPage: React.FC = () => {
             </VStack>
             <Progress
               mt={2}
-              ml="39%"
+              ml="5%"
               height="17px"
-              maxW="20%"
+              maxW="90%"
               colorScheme="green"
               value={progress}
             />
