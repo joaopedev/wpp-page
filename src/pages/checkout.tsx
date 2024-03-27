@@ -165,8 +165,8 @@ export const CheckOut: React.FC = () => {
         </VStack>
         <Stack mt={3}>
           <Box ml="16%">
-            <video controls width="80%">
-              <source src={PrimeiroVideoPaginaTres} type="video/mp4" />
+            <video src={PrimeiroVideoPaginaTres} typeof="video/mp4" controls width="80%">
+              {/* <source src={PrimeiroVideoPaginaTres} type="video/mp4" /> */}
               Seu navegador não suporta o elemento de vídeo.
             </video>
           </Box>
@@ -192,8 +192,8 @@ export const CheckOut: React.FC = () => {
         </VStack>
         <Stack mt={4}>
           <Box ml="16%">
-            <video controls width="80%">
-              <source src={SegundoVideoPaginaTres} type="video/mp4" />
+            <video src={SegundoVideoPaginaTres} typeof="video/mp4" controls width="80%">
+              {/* <source src={SegundoVideoPaginaTres} type="video/mp4" /> */}
               Seu navegador não suporta o elemento de vídeo.
             </video>
           </Box>

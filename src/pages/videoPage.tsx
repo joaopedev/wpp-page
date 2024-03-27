@@ -62,8 +62,7 @@ export const VideoPage: React.FC = () => {
       </VStack>
       <Box  mt={3}>
         <VStack>
-           <video autoPlay disableRemotePlayback controls={false} width="80%">
-            <source src={VideoAPP} type="video/mp4" />
+           <video src={VideoAPP} typeof="video/mp4" autoPlay disableRemotePlayback controls={false} width="80%">
             Seu navegador não suporta o elemento de vídeo.
           </video>
         </VStack>
@@ -126,38 +125,38 @@ export const VideoPage: React.FC = () => {
         {progress === 100 && (
           <SimpleGrid mt={5} columns={[1, 2]} spacing={2}>
             <Box ml="16%">
-              <video controls width="80%">
-                <source src={PrimeiroVideoEspiao} type="video/mp4" />
+              <video src={PrimeiroVideoEspiao} typeof="video/mp4" controls width="80%">
+                {/* <source src={PrimeiroVideoEspiao} type="video/mp4" /> */}
                 Seu navegador não suporta o elemento de vídeo.
               </video>
             </Box>
             <Box ml="16%">
-              <video controls width="80%">
-                <source src={SegundoVideoEspiao} type="video/mp4" />
+              <video src={SegundoVideoEspiao} typeof="video/mp4" controls width="80%">
+                {/* <source src={SegundoVideoEspiao} type="video/mp4" /> */}
                 Seu navegador não suporta o elemento de vídeo.
               </video>
             </Box>
             <Box ml="16%">
-              <video controls width="80%">
-                <source src={TerceiroVideoEspiao} type="video/mp4" />
+              <video src={TerceiroVideoEspiao} typeof="video/mp4" controls width="80%">
+                {/* <source src={TerceiroVideoEspiao} type="video/mp4" /> */}
                 Seu navegador não suporta o elemento de vídeo.
               </video>
             </Box>
             <Box ml="16%">
-              <video controls width="80%">
-                <source src={QuartoVideoEspiao} type="video/mp4" />
+              <video src={QuartoVideoEspiao} typeof="video/mp4" controls width="80%">
+                {/* <source src={QuartoVideoEspiao} type="video/mp4" /> */}
                 Seu navegador não suporta o elemento de vídeo.
               </video>
             </Box>
             <Box ml="16%">
-              <video controls width="80%">
-                <source src={QuintoVideoEspiao} type="video/mp4" />
+              <video src={QuintoVideoEspiao} typeof="video/mp4" controls width="80%">
+                {/* <source src={QuintoVideoEspiao} type="video/mp4" /> */}
                 Seu navegador não suporta o elemento de vídeo.
               </video>
             </Box>
             <Box ml="16%">
-              <video controls width="80%">
-                <source src={SextoVideoEspiao} type="video/mp4" />
+              <video src={SextoVideoEspiao} typeof="video/mp4" controls width="80%">
+                {/* <source src={SextoVideoEspiao} type="video/mp4" /> */}
                 Seu navegador não suporta o elemento de vídeo.
               </video>
             </Box>
