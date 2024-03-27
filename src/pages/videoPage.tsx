@@ -67,14 +67,14 @@ export const VideoPage: React.FC = () => {
             Seu navegador não suporta o elemento de vídeo.
           </video>
         </VStack>
-        <Stack mt={4} ml={"27%"}>
+        <Stack mt={4} ml={"8%"}>
           <Progress
             colorScheme="green"
             height="32px"
-            maxW="60%"
+            maxW="90%"
             value={progress}
           />
-          <Text ml={"29%"}>{progress >= 2 ? `${progress}%` : "2%"}</Text>
+          <Text ml={"39%"}>{progress >= 2 ? `${progress}%` : "2%"}</Text>
         </Stack>
         {progress < 100 ? (
           <VStack m={2}>
