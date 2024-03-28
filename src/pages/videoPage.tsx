@@ -129,6 +129,8 @@ export const VideoPage: React.FC = () => {
                 {/* <source src={PrimeiroVideoEspiao} type="video/mp4" /> */}
                 Seu navegador não suporta o elemento de vídeo.
               </video>
+              <Image src="images/primeirovideo.png" alt="Preview do Vídeo" position={"absolute"} top={0} left={0}
+                    width={100} height={100} objectFit={"cover"} zIndex={1} />
             </Box>
             <Box ml="16%">
               <video src={SegundoVideoEspiao} typeof="video/mp4" controls width="80%">
