@@ -26,7 +26,7 @@ import FotoTerceiroVideo from "../images/terceirovideo.png";
 import FotoQuartoVideo from "../images/quartovideo.png";
 import FotoQuintoVideo from "../images/quintovideo.png";
 import FotoSextoVideo from "../images/sextovideo.png";
-import ReactPlayer from 'react-player';
+import ReactPlayer from "react-player";
 
 export const VideoPage: React.FC = () => {
   const navigate = useNavigate();
@@ -61,15 +61,50 @@ export const VideoPage: React.FC = () => {
         </VStack>
       </Box>
       <VStack m={4}>
-        <Text as="b" mt={8}>
-          Acesse o Whatsapp, Instagram, Facebook, Ligações, Áudios, Fotos,
-          Vídeos e Localização de qualquer Celular usando este Aplicativo apenas
-          com o numero
+        <Text as="b" fontSize="2xl" textAlign="center" mt={8}>
+          Acesse o Whatsapp,{" "}
+          <Text as="span" color="green.500">
+            Instagram
+          </Text>
+          ,{" "}
+          <Text as="span" color="green.500">
+            Facebook
+          </Text>
+          ,{" "}
+          <Text as="span" color="green.500">
+          Ligações
+          </Text>
+          ,{" "}
+          <Text as="span" color="green.500">
+          Áudios
+          </Text>
+          ,{" "}
+          <Text as="span" color="green.500">
+          Fotos
+          </Text>
+          ,{" "}
+          <Text as="span" color="green.500">
+          Vídeos
+          </Text>
+          ,{" "}
+          <Text as="span" color="green.500">
+          Localização
+          {" "}
+          </Text>
+           e  de qualquer Celular
+          usando este Aplicativo apenas com o numero
         </Text>
       </VStack>
-      <Box  mt={3}>
+      <Box mt={3}>
         <VStack>
-           <video src={VideoAPP} typeof="video/mp4" autoPlay disableRemotePlayback controls={false} width="80%">
+          <video
+            src={VideoAPP}
+            typeof="video/mp4"
+            autoPlay
+            disableRemotePlayback
+            controls={false}
+            width="80%"
+          >
             Seu navegador não suporta o elemento de vídeo.
           </video>
         </VStack>
@@ -80,11 +115,11 @@ export const VideoPage: React.FC = () => {
             maxW="90%"
             value={progress}
           />
-          <Text ml={"39%"}>{progress >= 2 ? `${progress}%` : "2%"}</Text>
+          <Text as="b" textAlign="center">{progress >= 2 ? `${progress}%` : "2%"}</Text>
         </Stack>
         {progress < 100 ? (
           <VStack m={2}>
-            <Text>
+            <Text p={3} textAlign="center">
               Aguarde! Estamos levantando as informações sobre o contato.
             </Text>
           </VStack>
@@ -126,7 +161,9 @@ export const VideoPage: React.FC = () => {
         ) : null}
         {progress === 100 && (
           <VStack mt={3}>
-          <Text p={5} as="b">Veja os comentários dos nossos clientes! </Text>
+            <Text p={5} fontSize="2xl" textAlign="center" as="b">
+              Veja os comentários dos nossos clientes!{" "}
+            </Text>
           </VStack>
         )}
         {progress === 100 && (
