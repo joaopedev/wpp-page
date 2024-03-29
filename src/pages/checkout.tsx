@@ -6,10 +6,13 @@ import CompraSegura from "../images/image_compra_garantida.png";
 import CompraSegura2 from "../images/image_compra_garantida_2.png";
 import Garantia from "../images/garantia.png";
 import FooterImage from "../images/footer_image.png";
-import Comentarios from "../images/comentarios.png";
+import Comentarios from "../images/comentarios_mobile.png";
 import BreathableButton from "../components/breathableButton";
 import PrimeiroVideoPaginaTres from "../videos/primeirovideopaginatres.mp4";
 import SegundoVideoPaginaTres from "../videos/segundovideopaginatres.mp4";
+import FotoPrimeiroVideo from "../images/primeirovideopag3.png";
+import FotoSegundoVideo from "../images/segundovideopag3.png";
+import ReactPlayer from 'react-player';
 
 const getRandomNumber = () => {
   return Math.floor(Math.random() * (180 - 80 + 1)) + 80;
@@ -164,12 +167,15 @@ export const CheckOut: React.FC = () => {
           </Text>
         </VStack>
         <Stack mt={3}>
-          <Box ml="16%">
-            <video src={PrimeiroVideoPaginaTres} typeof="video/mp4" controls width="80%">
-              {/* <source src={PrimeiroVideoPaginaTres} type="video/mp4" /> */}
-              Seu navegador não suporta o elemento de vídeo.
-            </video>
-          </Box>
+          <div style={{ marginLeft: "16%" }}>
+              <ReactPlayer
+                url={PrimeiroVideoPaginaTres}
+                controls
+                width="80%"
+                height={200}
+                light={FotoPrimeiroVideo}
+              />
+          </div>
         </Stack>
         <VStack mt={4}>
           <Text color="green" fontSize="20" as="b" justifyContent="center">
@@ -191,12 +197,15 @@ export const CheckOut: React.FC = () => {
           <Image src={CompraSegura} alt="compra segura" />
         </VStack>
         <Stack mt={4}>
-          <Box ml="16%">
-            <video src={SegundoVideoPaginaTres} typeof="video/mp4" controls width="80%">
-              {/* <source src={SegundoVideoPaginaTres} type="video/mp4" /> */}
-              Seu navegador não suporta o elemento de vídeo.
-            </video>
-          </Box>
+          <div style={{ marginLeft: "16%" }}>
+            <ReactPlayer
+              url={SegundoVideoPaginaTres}
+              controls
+              width="80%"
+              height={200}
+              light={FotoSegundoVideo}
+            />
+          </div>
         </Stack>
         <VStack mt={4}>
           <Text color="green" fontSize="20" as="b" justifyContent="center">
