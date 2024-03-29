@@ -21,7 +21,11 @@ import QuintoVideoEspiao from "../videos/quintovideoespiao.mp4";
 import SextoVideoEspiao from "../videos/sextovideoespiao.mp4";
 import WallpapperWpp from "../images/whatappimage.png";
 import FotoPrimeiroVideo from "../images/primeirovideo.png";
-import FotoSegundoVideo from "../images/segundovideo.png"
+import FotoSegundoVideo from "../images/segundovideo.png";
+import FotoTerceiroVideo from "../images/terceirovideo.png";
+import FotoQuartoVideo from "../images/quartovideo.png";
+import FotoQuintoVideo from "../images/quintovideo.png";
+import FotoSextoVideo from "../images/sextovideo.png";
 import ReactPlayer from 'react-player';
 
 export const VideoPage: React.FC = () => {
@@ -151,27 +155,36 @@ export const VideoPage: React.FC = () => {
                 controls
                 width="80%"
                 height={200}
-                light={FotoSegundoVideo}
+                light={FotoTerceiroVideo}
               />
             </div>
-            <Box ml="16%">
-              <video src={QuartoVideoEspiao} typeof="video/mp4" controls width="80%">
-                {/* <source src={QuartoVideoEspiao} type="video/mp4" /> */}
-                Seu navegador não suporta o elemento de vídeo.
-              </video>
-            </Box>
-            <Box ml="16%">
-              <video src={QuintoVideoEspiao} typeof="video/mp4" controls width="80%">
-                {/* <source src={QuintoVideoEspiao} type="video/mp4" /> */}
-                Seu navegador não suporta o elemento de vídeo.
-              </video>
-            </Box>
-            <Box ml="16%">
-              <video src={SextoVideoEspiao} typeof="video/mp4" controls width="80%">
-                {/* <source src={SextoVideoEspiao} type="video/mp4" /> */}
-                Seu navegador não suporta o elemento de vídeo.
-              </video>
-            </Box>
+            <div style={{ marginLeft: "16%" }}>
+              <ReactPlayer
+                url={QuartoVideoEspiao}
+                controls
+                width="80%"
+                height={200}
+                light={FotoQuartoVideo}
+              />
+            </div>
+            <div style={{ marginLeft: "16%" }}>
+              <ReactPlayer
+                url={QuintoVideoEspiao}
+                controls
+                width="80%"
+                height={200}
+                light={FotoQuintoVideo}
+              />
+            </div>
+            <div style={{ marginLeft: "16%" }}>
+              <ReactPlayer
+                url={SextoVideoEspiao}
+                controls
+                width="80%"
+                height={200}
+                light={FotoSextoVideo}
+              />
+            </div>
           </SimpleGrid>
         )}
         <Box mt={5} bg="black" h="230px" w="100%" p={4} color="white">
