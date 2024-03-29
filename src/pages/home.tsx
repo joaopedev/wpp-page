@@ -10,6 +10,7 @@ import {
 import React, { useState, useEffect } from "react";
 import TesteImage from "../images/teste_agora_mesmo.png";
 import FooterImage from "../images/footer_image.png";
+import SistemasOperacionais from "../images/sistemas_operacionais.png"
 import { useNavigate } from "react-router-dom";
 
 const getCurrentYear = () => {
@@ -60,6 +61,9 @@ export const Home: React.FC = () => {
         </Button>
         <Text mt={8}>*Esta Ferramenta é 100% anônima.</Text>
         <Text>Funciona em todos os sistemas operacionais.</Text>
+      </VStack>
+      <VStack mt={5}>
+        <Image src={SistemasOperacionais} />
       </VStack>
       <Box mt={2} bg="black" h="230px" w="100%" p={4} color="white">
         <VStack>

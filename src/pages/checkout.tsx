@@ -40,33 +40,26 @@ export const CheckOut: React.FC = () => {
       </Box>
       <Box>
         <VStack>
-          <Text color="black" fontSize="30" justifyContent="center">
+          <Text color="black" fontSize="30">
             FORAM ENCONTRADAS
           </Text>
-        </VStack>
-        <VStack>
-          <Text color="red" fontSize="30" as="b" justifyContent="center">
+          <Text color="red" fontSize="30" as="b">
             12 CONVERSAS
           </Text>
-        </VStack>
-        <VStack>
-          <Text color="red" fontSize="30" justifyContent="center">
+          <Text color="red" fontSize="30">
             COMPROMETEDORAS
           </Text>
-        </VStack>
-        <VStack m={4}>
-          <Text color="black" fontSize="18" justifyContent="center">
+          <Text textAlign="center" m={4} color="black" fontSize="18" justifyContent="center">
             PARA TER ACESSO AS CONVERSAS FINALIZE SEU CADASTRO PAGANDO UMA TAXA{" "}
-            <br />
             SIMBÓLICA PARA MANTER NOSSO SITE NO AR E SEU APP ESPIÃO FUNCIONANDO
           </Text>
           <Text
-            mt={4}
+            m={3}
             color="black"
-            fontSize="16"
+            fontSize="xl"
             as="b"
+            textAlign="center"
             textDecoration={"underline"}
-            justifyContent="center"
           >
             VOCÊ VAI PRECISAR APENAS DO NÚMERO PARA MONITORAR <br></br> NÃO
             PRECISA TER ACESSO AO CELULAR PARA MONITORAR
@@ -75,26 +68,15 @@ export const CheckOut: React.FC = () => {
         <VStack spacing={1} mt={4}>
           <Image src={PrintImage} alt="print whatsapp" />
         </VStack>
-        <VStack mt={4}>
-          <Text color="green" fontSize="20" as="b" justifyContent="center">
-            ÚLTIMAS 7 LICENÇAS COM DESCONTO
-          </Text>
-        </VStack>
-        <VStack>
-          <Text color="green" fontSize="20" as="b" justifyContent="center">
-            SEM REGISTRO NA FATURA DO CARTÃO
+        <VStack p={2} mt={4}>
+          <Text textAlign="center" color="green" fontSize="20" as="b">
+            ÚLTIMAS 7 LICENÇAS COM DESCONTO SEM REGISTRO NA FATURA DO CARTÃO
           </Text>
         </VStack>
         <VStack spacing={1}>
-          <Image src={ValorDesc} alt="desconto" />
-        </VStack>
-        <VStack spacing={4} align={"center"} mt={4}>
+          <Image mb={3} src={ValorDesc} alt="desconto" />
           <BreathableButton onClick={handleClick} />
-        </VStack>
-        <VStack spacing={1}>
-          <Image src={CompraSegura} alt="compra segura" />
-        </VStack>
-        <VStack m={-2} spacing={1} mt={4}>
+          <Image m={3} src={CompraSegura} alt="compra segura" />
           <Image src={Comentarios} alt="comentarios"/>
         </VStack>
         <VStack>
@@ -102,30 +84,19 @@ export const CheckOut: React.FC = () => {
             color="green"
             fontSize="20"
             as="b"
-            justifyContent="center"
+            textAlign="center"
             mt={3}
           >
-            ÚLTIMAS 7 LICENÇAS COM DESCONTO
+            ÚLTIMAS 7 LICENÇAS COM DESCONTO SEM REGISTRO NA FATURA DO CARTÃO
           </Text>
-        </VStack>
-        <VStack>
-          <Text color="green" fontSize="20" as="b" justifyContent="center">
-            SEM REGISTRO NA FATURA DO CARTÃO
-          </Text>
-        </VStack>
-        <VStack spacing={1}>
           <Image src={ValorDesc} alt="desconto" />
-        </VStack>
-        <VStack spacing={4} align={"center"} mt={4}>
           <BreathableButton onClick={handleClick} />
-        </VStack>
-        <VStack spacing={1}>
-          <Image src={CompraSegura} alt="compra segura" />
+          <Image p={3} src={CompraSegura} alt="compra segura" />
         </VStack>
       </Box>
       <Box  bg={"gray"}>
-        <VStack>
-          <Text fontSize="4xl" as="b" color={"white"}>
+        <VStack m={2}>
+          <Text fontSize="3xl" as="b" color={"white"}>
             GARANTIA BLINDADA
           </Text>
         </VStack>
@@ -133,36 +104,25 @@ export const CheckOut: React.FC = () => {
           <Flex align="center" m={3}>
             <Image src={Garantia} alt="garantia" width={"40%"} />
             <VStack>
-              <Text color={"white"} fontSize={20}>
+              <Text textAlign="center" color={"white"} fontSize={20}>
                 CASO NÃO GOSTE DO APP <br /> ESPIÃO VOCÊ TEM 30 DIAS DE
                 GARANTIA, <br /> BASTA NOS CHAMAR <br /> NO WHATSAPP
               </Text>
             </VStack>
           </Flex>
         </VStack>
-        <VStack>
-          <Text color="white" fontSize="20" as="b" justifyContent="center">
-            ÚLTIMAS 7 LICENÇAS COM DESCONTO
+        <VStack m={2}>
+          <Text color="white" fontSize="20" as="b" textAlign="center">
+            ÚLTIMAS 7 LICENÇAS COM DESCONTO SEM REGISTRO NA FATURA DO CARTÃO
           </Text>
-        </VStack>
-        <VStack>
-          <Text color="white" fontSize="20" as="b" justifyContent="center">
-            SEM REGISTRO NA FATURA DO CARTÃO
-          </Text>
-        </VStack>
-        <VStack spacing={1}>
           <Image src={ValorDesc} alt="desconto" />
-        </VStack>
-        <VStack spacing={4} align={"center"} mt={4}>
           <BreathableButton onClick={handleClick} />
-        </VStack>
-        <VStack spacing={1}>
-          <Image src={CompraSegura2} alt="compra segura" />
+          <Image m={2} src={CompraSegura2} alt="compra segura" />
         </VStack>
       </Box>
       <Box bg={"white"}>
-        <VStack spacing={4} align={"center"} mt={4}>
-          <Text color={"black"} fontSize="2xl" as={"b"}>
+        <VStack m={2} mt={4}>
+          <Text textAlign="center" color={"black"} fontSize="2xl" as={"b"}>
             PESSOAS QUE USAM APP ESPIÃO
           </Text>
         </VStack>
@@ -177,24 +137,13 @@ export const CheckOut: React.FC = () => {
               />
           </div>
         </Stack>
-        <VStack mt={4}>
-          <Text color="green" fontSize="20" as="b" justifyContent="center">
-            ÚLTIMAS 7 LICENÇAS COM DESCONTO
+        <VStack mt={5}>
+          <Text color="green" fontSize="20" as="b" textAlign="center">
+            ÚLTIMAS 7 LICENÇAS COM DESCONTO SEM REGISTRO NA FATURA DO CARTÃO
           </Text>
-        </VStack>
-        <VStack>
-          <Text color="green" fontSize="20" as="b" justifyContent="center">
-            SEM REGISTRO NA FATURA DO CARTÃO
-          </Text>
-        </VStack>
-        <VStack spacing={1}>
-          <Image src={ValorDesc} alt="desconto" />
-        </VStack>
-        <VStack spacing={4} align={"center"} mt={4}>
+          <Image mb={2} src={ValorDesc} alt="desconto" />
           <BreathableButton onClick={handleClick} />
-        </VStack>
-        <VStack spacing={1}>
-          <Image src={CompraSegura} alt="compra segura" />
+          <Image m={2} src={CompraSegura} alt="compra segura" />
         </VStack>
         <Stack mt={4}>
           <div style={{ marginLeft: "16%" }}>
@@ -208,23 +157,12 @@ export const CheckOut: React.FC = () => {
           </div>
         </Stack>
         <VStack mt={4}>
-          <Text color="green" fontSize="20" as="b" justifyContent="center">
-            ÚLTIMAS 7 LICENÇAS COM DESCONTO
+          <Text color="green" fontSize="20" as="b" textAlign="center">
+            ÚLTIMAS 7 LICENÇAS COM DESCONTO SEM REGISTRO NA FATURA DO CARTÃO
           </Text>
-        </VStack>
-        <VStack>
-          <Text color="green" fontSize="20" as="b" justifyContent="center">
-            SEM REGISTRO NA FATURA DO CARTÃO
-          </Text>
-        </VStack>
-        <VStack spacing={1}>
-          <Image src={ValorDesc} alt="desconto" />
-        </VStack>
-        <VStack spacing={4} align={"center"} mt={4}>
+          <Image mb={2} src={ValorDesc} alt="desconto" />
           <BreathableButton onClick={handleClick} />
-        </VStack>
-        <VStack spacing={1}>
-          <Image src={CompraSegura} alt="compra segura" />
+          <Image m={2} src={CompraSegura} alt="compra segura" />
         </VStack>
       </Box>
       <Box mt={2} bg="black" h="230px" w="100%" p={4} color="white">
