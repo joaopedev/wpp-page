@@ -24,7 +24,7 @@ const getCurrentYear = () => {
 
 export const CheckOut: React.FC = () => {
   const handleClick = () => {
-    window.open("https://app.monetizze.com.br/checkout/KGX357636", "_blank");
+    window.open("https://app.monetizze.com.br/r/BKG1792603", "_blank");
   };
 
   const licenseCount = getRandomNumber();
