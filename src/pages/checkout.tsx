@@ -18,13 +18,32 @@ const getRandomNumber = () => {
   return Math.floor(Math.random() * (180 - 80 + 1)) + 80;
 };
 
+function getParams() {
+  const params = new URLSearchParams(window.location.search);
+  const utmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+  let paramString = '';
+
+  utmParams.forEach(param => {
+    const value = params.get(param);
+    if (value) {
+      if (paramString !== '') paramString += '&';
+      paramString += `${param}=${value}`;
+    }
+  });
+
+  return paramString;
+}
+
 const getCurrentYear = () => {
   return new Date().getFullYear();
 };
 
 export const CheckOut: React.FC = () => {
   const handleClick = () => {
-    window.open("https://app.monetizze.com.br/r/BKG1792603", "_blank");
+    let base = "https://app.monetizze.com.br/checkout/KGX357636";
+    const params = getParams();
+    const url = params ? `${base}?${params}` : base; 
+    window.open(url, "_blank");
   };
 
   const licenseCount = getRandomNumber();
