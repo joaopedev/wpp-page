@@ -29,11 +29,29 @@ import FotoSextoVideo from "../images/sextovideo.png";
 import ReactPlayer from "react-player";
 
 export const VideoPage: React.FC = () => {
+
+  const getUTMParameters = (): Record<string, string> => {
+    const utmParametersString = sessionStorage.getItem('utmParameters') || '{}';
+    return JSON.parse(utmParametersString);
+  };
+  
+  const checkOutURL = (): string => {
+    const utmCampaign = getUTMParameters().utm_campaign; 
+  
+    let checkout = '/checkout';
+  
+    if (utmCampaign) {
+      checkout += `?utm_campaign=${encodeURIComponent(utmCampaign)}`;
+    }
+  
+    return checkout;
+  };
+
   const navigate = useNavigate();
   const [progress, setProgress] = React.useState(0);
   const [phoneNumber, setPhoneNumber] = React.useState<string | null>(null);
   const handleClick = () => {
-    navigate("/checkout");
+    navigate(checkOutURL());
   };
 
   React.useEffect(() => {
