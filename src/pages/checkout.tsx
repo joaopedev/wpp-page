@@ -18,54 +18,35 @@ const getRandomNumber = () => {
   return Math.floor(Math.random() * (180 - 80 + 1)) + 80;
 };
 
-const prefix: string[] = ["https://app.monetizze.com.br", "https://sucesso.monetizze.com.br"];
-
-function getParams(): string {
-  let t: string = "";
-  const topWindow: Window | null = window.top;
-
-  if (topWindow !== null) {
-      const e: string = topWindow.location.href;
-      const r: URL = new URL(e);
-
-      if (r !== null) {
-          const a: string | null = r.searchParams.get("utm_source");
-          const n: string | null = r.searchParams.get("utm_medium");
-          const o: string | null = r.searchParams.get("utm_campaign");
-          const m: string | null = r.searchParams.get("utm_term");
-          const c: string | null = r.searchParams.get("utm_content");
-
-          if (e.indexOf("?") !== -1) {
-              t = `&sck=${a}|${n}|${o}|${m}|${c}`;
-          }
-      }
-  }
-  return t;
-}
-
 
 const getCurrentYear = () => {
   return new Date().getFullYear();
 };
 
 export const CheckOut: React.FC = () => {
-  const handleClick = () => {
-    const t = new URLSearchParams(window.location.search);
-    const queryString = t.toString();
 
-    if (queryString) {
-        document.querySelectorAll("a").forEach((e: HTMLAnchorElement) => {
-            for (let r = 0; r < prefix.length; r++) {
-                if (e.href.indexOf(prefix[r]) !== -1) {
-                    e.href += e.href.indexOf("?") === -1 ? "?" + queryString + getParams() : "&" + queryString + getParams();
-                }
-            }
-        });
+  const getUTMParameters = (): Record<string, string> => {
+    const utmParametersString = sessionStorage.getItem('utmParameters') || '{}';
+    return JSON.parse(utmParametersString);
+  };
+  
+  const buildPurchaseURL = (): string => {
+    const utmCampaign = getUTMParameters().utm_campaign; 
+  
+    let purchaseURL = 'https://app.monetizze.com.br/checkout/KGX357636';
+  
+    if (utmCampaign) {
+      purchaseURL += `?utm_campaign=${encodeURIComponent(utmCampaign)}`;
     }
+  
+    return purchaseURL;
+  };
+  
+  const handleClick = () => {
+    const purchaseURL = buildPurchaseURL();
+    window.open(purchaseURL, '_blank');
+  };
 
-    let url = 'https://app.monetizze.com.br/checkout/KGX357636'
-    window.open(url, '_blank')
-};
 
   const licenseCount = getRandomNumber();
 
