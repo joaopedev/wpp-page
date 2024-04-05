@@ -1,4 +1,4 @@
-import { Box, VStack, Text, Image, Flex, Stack, ChakraProvider } from "@chakra-ui/react";
+import { Box, VStack, Text, Image, Flex, Stack } from "@chakra-ui/react";
 import * as React from "react";
 import PrintImage from "../images/print_wpp.png";
 import ValorDesc from "../images/valor_desc.png";
