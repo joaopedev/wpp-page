@@ -17,12 +17,42 @@ const getCurrentYear = () => {
   return new Date().getFullYear();
 };
 
+interface UTMParameters {
+  utm_source: string | null;
+  utm_medium: string | null;
+  utm_campaign: string | null;
+  utm_term: string | null;
+  utm_content: string | null;
+}
+
+function getUTMParameters(): UTMParameters {
+  const searchParams = new URLSearchParams(window.location.search);
+  const utmParameters: UTMParameters = {
+      utm_source: searchParams.get("utm_source"),
+      utm_medium: searchParams.get("utm_medium"),
+      utm_campaign: searchParams.get("utm_campaign"),
+      utm_term: searchParams.get("utm_term"),
+      utm_content: searchParams.get("utm_content")
+  };
+  console.log(utmParameters)
+  return utmParameters;
+}
+
+function storeUTMParameters() {
+  const utmParameters = getUTMParameters();
+  sessionStorage.setItem('utmParameters', JSON.stringify(utmParameters));
+}
+
 
 export const Home: React.FC = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState("");
 
+  useEffect(() => {
+    storeUTMParameters();
+  }, []);
+  
   useEffect(() => {
     const storedPhoneNumber = localStorage.getItem("phoneNumber");
     if (storedPhoneNumber) {
