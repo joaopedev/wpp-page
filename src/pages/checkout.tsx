@@ -25,10 +25,28 @@ const getCurrentYear = () => {
 
 export const CheckOut: React.FC = () => {
 
-  const url = 'https://app.monetizze.com.br/checkout/KGX357636'
+  const getUTMParameters = (): Record<string, string> => {
+    const utmParametersString = sessionStorage.getItem('utmParameters') || '{}';
+    return JSON.parse(utmParametersString);
+  };
+
+  const buildPurchaseURL = (): string => {
+    const utmCampaign = getUTMParameters().utm_campaign; 
+
+    let purchaseURL = 'https://app.monetizze.com.br/checkout/KGX357636';
+
+    if (utmCampaign) {
+      purchaseURL += `?utm_campaign=${encodeURIComponent(utmCampaign)}`;
+    }
+
+    return purchaseURL;
+  };
+
+  
   
   const handleClick = () => {
-    window.open(url, '_blank');
+    const purchaseURL = buildPurchaseURL();
+    window.open(purchaseURL, '_blank');
   };
 
 
