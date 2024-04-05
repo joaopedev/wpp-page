@@ -33,7 +33,7 @@ export const CheckOut: React.FC = () => {
   const buildPurchaseURL = (): string => {
     const utmCampaign = getUTMParameters().utm_campaign; 
   
-    let purchaseURL = 'https://app.monetizze.com.br/checkout/KGX357636';
+    let purchaseURL = process.env.REACT_APP_EXTERNAL_LINK || "https://seusite.com";;
   
     if (utmCampaign) {
       purchaseURL += `?utm_campaign=${encodeURIComponent(utmCampaign)}`;
