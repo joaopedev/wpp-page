@@ -1,4 +1,4 @@
-import { Box, VStack, Text, Image, Flex, Stack } from "@chakra-ui/react";
+import { Box, VStack, Text, Image, Flex, Stack, ChakraProvider } from "@chakra-ui/react";
 import * as React from "react";
 import PrintImage from "../images/print_wpp.png";
 import ValorDesc from "../images/valor_desc.png";
@@ -33,7 +33,7 @@ export const CheckOut: React.FC = () => {
   const buildPurchaseURL = (): string => {
     const utmCampaign = getUTMParameters().utm_campaign; 
   
-    let purchaseURL = process.env.REACT_APP_EXTERNAL_LINK || "https://seusite.com";;
+    let purchaseURL = process.env.REACT_APP_EXTERNAL_LINK || "https://seusite.com";
   
     if (utmCampaign) {
       purchaseURL += `?utm_campaign=${encodeURIComponent(utmCampaign)}`;
@@ -51,6 +51,14 @@ export const CheckOut: React.FC = () => {
   const licenseCount = getRandomNumber();
 
   return (
+    <ChakraProvider>
+      <Box>
+        {/* Meta tags */}
+        <meta charSet="UTF-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="nofollow" />
+        <title>Olhar Digital</title>
     <Box>
       <Box bg="Yellow" h="30%" w="100%" p={4} color="white">
         <VStack>
@@ -196,6 +204,8 @@ export const CheckOut: React.FC = () => {
         </VStack>
       </Box>
     </Box>
+    </Box>
+    </ChakraProvider>
   );
 };
 

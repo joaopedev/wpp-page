@@ -6,6 +6,7 @@ import {
   Button,
   Text,
   Spinner,
+  ChakraProvider, 
 } from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
 import TesteImage from "../images/teste_agora_mesmo.png";
@@ -74,6 +75,14 @@ export const Home: React.FC = () => {
     }
   };
   return (
+    <ChakraProvider>
+      <Box>
+        {/* Meta tags */}
+        <meta charSet="UTF-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="nofollow" />
+        <title>Olhar Digital</title>
     <Box>
       <Box bg="#00a86b" h="90px" w="100%" p={4} color="white"></Box>
       <VStack>
@@ -105,6 +114,8 @@ export const Home: React.FC = () => {
         </VStack>
       </Box>
     </Box>
+    </Box>
+    </ChakraProvider>
   );
 };
 
