@@ -32,28 +32,11 @@ import ReactPlayer from "react-player";
 
 export const VideoPage: React.FC = () => {
 
-  const getUTMParameters = (): Record<string, string> => {
-    const utmParametersString = sessionStorage.getItem('utmParameters') || '{}';
-    return JSON.parse(utmParametersString);
-  };
-  
-  const checkOutURL = (): string => {
-    const utmCampaign = getUTMParameters().utm_campaign; 
-  
-    let checkout = '/checkout';
-  
-    if (utmCampaign) {
-      checkout += `?utm_campaign=${encodeURIComponent(utmCampaign)}`;
-    }
-  
-    return checkout;
-  };
-
   const navigate = useNavigate();
   const [progress, setProgress] = React.useState(0);
   const [phoneNumber, setPhoneNumber] = React.useState<string | null>(null);
   const handleClick = () => {
-    navigate(checkOutURL());
+    navigate("/checkout");
   };
 
   React.useEffect(() => {
@@ -72,13 +55,6 @@ export const VideoPage: React.FC = () => {
   }, []);
 
   return (
-    <ChakraProvider>
-      <Box>
-        <meta charSet="UTF-8" />
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="robots" content="nofollow" />
-        <title>Olhar Digital</title>
     <Box>
       <Box bg="Yellow" h="30%" w="100%" p={4} color="white">
         <VStack>
@@ -262,8 +238,6 @@ export const VideoPage: React.FC = () => {
         </Box>
       </Box>
     </Box>
-    </Box>
-    </ChakraProvider>
   );
 };
 
