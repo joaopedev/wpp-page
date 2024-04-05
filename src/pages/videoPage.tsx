@@ -6,8 +6,7 @@ import {
   Stack,
   SimpleGrid,
   Image,
-  Avatar,
-  ChakraProvider
+  Avatar
 } from "@chakra-ui/react";
 
 import * as React from "react";

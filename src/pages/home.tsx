@@ -5,8 +5,7 @@ import {
   Input,
   Button,
   Text,
-  Spinner,
-  ChakraProvider, 
+  Spinner 
 } from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
 import TesteImage from "../images/teste_agora_mesmo.png";
