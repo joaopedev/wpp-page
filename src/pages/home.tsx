@@ -18,40 +18,11 @@ const getCurrentYear = () => {
   return new Date().getFullYear();
 };
 
-interface UTMParameters {
-  utm_source: string | null;
-  utm_medium: string | null;
-  utm_campaign: string | null;
-  utm_term: string | null;
-  utm_content: string | null;
-}
-
-function getUTMParameters(): UTMParameters {
-  const searchParams = new URLSearchParams(window.location.search);
-  const utmParameters: UTMParameters = {
-      utm_source: searchParams.get("utm_source"),
-      utm_medium: searchParams.get("utm_medium"),
-      utm_campaign: searchParams.get("utm_campaign"),
-      utm_term: searchParams.get("utm_term"),
-      utm_content: searchParams.get("utm_content")
-  };
-  console.log(utmParameters)
-  return utmParameters;
-}
-
-function storeUTMParameters() {
-  const utmParameters = getUTMParameters();
-  sessionStorage.setItem('utmParameters', JSON.stringify(utmParameters));
-}
 
 export const Home: React.FC = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState("");
-
-  useEffect(() => {
-    storeUTMParameters();
-  }, []);
 
   useEffect(() => {
     const storedPhoneNumber = localStorage.getItem("phoneNumber");
@@ -75,14 +46,6 @@ export const Home: React.FC = () => {
     }
   };
   return (
-    <ChakraProvider>
-      <Box>
-        {/* Meta tags */}
-        <meta charSet="UTF-8" />
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="robots" content="nofollow" />
-        <title>Olhar Digital</title>
     <Box>
       <Box bg="#00a86b" h="90px" w="100%" p={4} color="white"></Box>
       <VStack>
@@ -114,8 +77,6 @@ export const Home: React.FC = () => {
         </VStack>
       </Box>
     </Box>
-    </Box>
-    </ChakraProvider>
   );
 };
 
